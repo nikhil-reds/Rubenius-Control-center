@@ -14,7 +14,11 @@ const initialPages = Object.fromEntries(
   mediaDocuments.map((document) => [document.id, 1]),
 ) as Record<PdfId, number>;
 
-export function PreviewWall() {
+type PreviewWallProps = {
+  splashFontClassName: string;
+};
+
+export function PreviewWall({ splashFontClassName }: PreviewWallProps) {
   const [pages, setPages] = useState(initialPages);
   const [activePdfId, setActivePdfId] = useState<PdfId | null>(null);
   const [videoPlaying, setVideoPlaying] = useState(false);
@@ -69,17 +73,17 @@ export function PreviewWall() {
           label={activeDocument.id}
         />
       ) : (
-        <RubeniusSplash />
+        <PreviewSplash fontClassName={splashFontClassName} />
       )}
     </main>
   );
 }
 
-function RubeniusSplash() {
+function PreviewSplash({ fontClassName }: { fontClassName: string }) {
   return (
-    <section className={styles.splash} aria-label="Rubenius">
+    <section className={styles.splash} aria-label="Closing the Loop At Home">
       <div className={styles.splashGlow} aria-hidden="true" />
-      <h1>Rubenius</h1>
+      <h1 className={fontClassName}>Closing the Loop At Home</h1>
     </section>
   );
 }

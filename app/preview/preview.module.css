@@ -149,9 +149,14 @@
 
 .splash h1 {
   margin: 0;
-  font-size: clamp(64px, 12vw, 190px);
+  max-width: 1200px;
+  padding: 24px;
+  font-size: clamp(42px, 7vw, 112px);
   font-weight: 700;
-  letter-spacing: -0.06em;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  text-align: center;
+  text-wrap: balance;
   text-shadow: 0 12px 44px rgba(0, 0, 0, 0.3);
 }
 
