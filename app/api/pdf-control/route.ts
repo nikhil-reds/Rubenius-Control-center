@@ -40,6 +40,14 @@ for (const document of mediaDocuments) {
     totalPages: document.kind === "images" ? document.images.length : null,
     updatedAt: Date.now(),
   };
+
+  if (document.kind === "images") {
+    state.documents[document.id].totalPages = document.images.length;
+    state.documents[document.id].page = Math.min(
+      state.documents[document.id].page,
+      document.images.length,
+    );
+  }
 }
 
 function json(data: unknown, status = 200) {

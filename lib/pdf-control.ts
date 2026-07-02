@@ -3,12 +3,7 @@ export const mediaDocuments = [
     id: "pdf-1",
     kind: "images",
     images: [
-      "/button01/9.jpg",
-      "/button01/10.jpg",
-      "/button01/11.jpg",
-      "/button01/12.jpg",
-      "/button01/13.jpg",
-      "/button01/14.jpg",
+      "/button01/Dasra%20%20NFSSM%20TDP__916%20and%20169%20%281%29.jpg",
     ],
   },
   { id: "pdf-2", kind: "video", src: "/video/video01.mp4" },
