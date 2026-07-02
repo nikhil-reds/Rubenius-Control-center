@@ -34,6 +34,14 @@ const state = (globalState.pdfRemoteState ??= {
 
 state.videoPlaying ??= false;
 
+for (const document of mediaDocuments) {
+  state.documents[document.id] ??= {
+    page: 1,
+    totalPages: document.kind === "images" ? document.images.length : null,
+    updatedAt: Date.now(),
+  };
+}
+
 function json(data: unknown, status = 200) {
   return Response.json(data, {
     status,

@@ -25,6 +25,18 @@ export const mediaDocuments = [
       "/button03/8.jpg",
     ],
   },
+  {
+    id: "pdf-4",
+    kind: "images",
+    images: [
+      "/button04/9.jpg",
+      "/button04/10.jpg",
+      "/button04/11.jpg",
+      "/button04/12.jpg",
+      "/button04/13.jpg",
+      "/button04/14.jpg",
+    ],
+  },
 ] as const;
 
 export type PdfId = (typeof mediaDocuments)[number]["id"];
