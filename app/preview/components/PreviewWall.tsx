@@ -18,7 +18,6 @@ export function PreviewWall() {
   const [pages, setPages] = useState(initialPages);
   const [activePdfId, setActivePdfId] = useState<PdfId | null>(null);
   const [videoPlaying, setVideoPlaying] = useState(false);
-  const [apiOnline, setApiOnline] = useState(true);
 
   const refreshPages = useCallback(async () => {
     try {
@@ -36,9 +35,8 @@ export function PreviewWall() {
           ]),
         ) as Record<PdfId, number>,
       );
-      setApiOnline(true);
     } catch {
-      setApiOnline(false);
+      // Ignore API offline errors silently
     }
   }, []);
 
@@ -57,9 +55,6 @@ export function PreviewWall() {
 
   return (
     <main className={styles.wall}>
-      <span className={styles.connection} data-online={apiOnline}>
-        {apiOnline ? "Connected" : "Reconnecting"}
-      </span>
       {activeDocument?.kind === "video" ? (
         <VideoViewer src={activeDocument.src} playing={videoPlaying} />
       ) : activeDocument?.kind === "images" ? (
@@ -79,7 +74,6 @@ function PreviewSplash() {
   return (
     <section className={styles.splash} aria-label="Rubenius idle screen">
       <video
-        className={styles.desktopSplashVideo}
         autoPlay
         loop
         muted
@@ -87,18 +81,7 @@ function PreviewSplash() {
         preload="auto"
         aria-hidden="true"
       >
-        <source src="/BG-VIDEO/DESKTOP.mp4" type="video/mp4" />
-      </video>
-      <video
-        className={styles.mobileSplashVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        aria-hidden="true"
-      >
-        <source src="/BG-VIDEO/mobile.mp4" type="video/mp4" />
+        <source src="/BG-VIDEO/gates-zone-one-title-page.mp4" type="video/mp4" />
       </video>
     </section>
   );
