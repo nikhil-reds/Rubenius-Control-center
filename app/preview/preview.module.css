@@ -42,14 +42,26 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: #070d12;
+  background: #000;
   place-items: center;
 }
 
-.videoViewer video {
+.videoFrame {
+  position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.videoFrame video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
   object-fit: contain;
+  object-position: center;
 }
 
 .imageSlide {
