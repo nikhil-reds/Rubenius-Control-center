@@ -6,7 +6,7 @@ export const mediaDocuments = [
       "/button01/BHRT.jpeg",
     ],
   },
-  { id: "pdf-2", kind: "video", src: "/video/video003.mp4" },
+  { id: "pdf-2", kind: "video", src: "/video/video004.mp4" },
   {
     id: "pdf-3",
     kind: "images",
