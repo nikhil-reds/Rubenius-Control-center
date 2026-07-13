@@ -50,8 +50,8 @@
   position: relative;
   display: grid;
   aspect-ratio: 9 / 16;
-  width: min(100vw, calc(100vh * 9 / 16));
-  height: min(100vh, calc(100vw * 16 / 9));
+  width: min(64vw, calc(64vh * 9 / 16));
+  max-height: 64vh;
   overflow: hidden;
   background: #000;
   place-items: center;
